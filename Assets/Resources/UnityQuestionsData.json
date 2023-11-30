@@ -1,0 +1,104 @@
+{
+    "questions" : [
+        {
+            "question": "What is the primary purpose of Unity in game development?",
+            "choices": ["Creating 2D graphics", "Managing databases", "Developing mobile apps", "Building interactive 3D games"],
+            "answerIndex": 3
+        },
+        {
+            "question": "In Unity, what does a 'GameObject' represent, and how is it used in the scene hierarchy?",
+            "choices": ["A visual effect", "A programming script", "A 3D model", "A fundamental building block"],
+            "answerIndex": 3
+        },
+        {
+            "question": "Explain the role of 'Components' in Unity. Provide an example of a commonly used component.",
+            "choices": ["Camera", "Background music", "Mouse cursor", "Folder structure"],
+            "answerIndex": 0
+        },
+        {
+            "question": "What is the purpose of the Unity Asset Store, and how does it benefit game developers?",
+            "choices": ["Selling finished games", "Purchasing virtual currency", "Downloading game assets and tools", "Testing beta versions"],
+            "answerIndex": 2
+        },
+        {
+            "question": "Describe the difference between Unity's 'Update' and 'FixedUpdate' functions in scripting.",
+            "choices": ["Update for graphics, FixedUpdate for physics", "FixedUpdate for graphics, Update for physics", "Both for graphics", "Both for physics"],
+            "answerIndex": 0
+        },
+        {
+            "question": "How does Unity handle collisions between game objects, and what are 'colliders' used for?",
+            "choices": ["Detecting keyboard input", "Rendering textures", "Handling player movement", "Simulating physical interactions"],
+            "answerIndex": 3
+        },
+        {
+            "question": "What is the purpose of the Unity Editor, and how does it facilitate game development?",
+            "choices": ["Testing game performance", "Writing code", "Designing game levels", "Debugging network issues"],
+            "answerIndex": 2
+        },
+        {
+            "question": "Explain the concept of 'Prefab' in Unity and how it contributes to efficient game development.",
+            "choices": ["A type of camera", "A reusable game object", "A lighting effect", "A game development framework"],
+            "answerIndex": 1
+        },
+        {
+            "question": "How can Unity be used for cross-platform game development, and what considerations are important for this approach?",
+            "choices": ["Using platform-specific code", "Ignoring platform differences", "Avoiding mobile devices", "Focusing only on web platforms"],
+            "answerIndex": 0
+        },
+        {
+            "question": "Describe the purpose of Unity's 'Coroutine' feature in scripting and provide a scenario where it might be useful.",
+            "choices": ["Handling keyboard input", "Implementing game logic", "Managing asynchronous tasks", "Rendering 3D models"],
+            "answerIndex": 2
+        },
+        {
+            "question": "What is Unity's ShaderLab, and how does it contribute to the visual aspects of game development?",
+            "choices": ["Managing audio assets", "Defining custom shaders", "Creating game mechanics", "Optimizing network performance"],
+            "answerIndex": 1
+        },
+        {
+            "question": "Explain the purpose of Unity's Animator Controller, and how is it used for character animation in games?",
+            "choices": ["Controlling camera movements", "Managing player input", "Animating 3D models", "Handling user interface transitions"],
+            "answerIndex": 2
+        },
+        {
+            "question": "What is the Unity Collaborate feature, and how does it facilitate collaborative game development?",
+            "choices": ["A version control system", "A 3D modeling tool", "An artificial intelligence module", "A network debugging tool"],
+            "answerIndex": 0
+        },
+        {
+            "question": "Describe the purpose of Unity's Rigidbody component, and how does it affect the physics of game objects?",
+            "choices": ["Creating particle effects", "Simulating fluid dynamics", "Handling object collisions", "Generating random numbers"],
+            "answerIndex": 2
+        },
+        {
+            "question": "How does Unity support virtual reality (VR) development, and what tools are available for VR game creation?",
+            "choices": ["Unity VR Toolkit", "UnityVR Studio", "VirtualReality Plugin", "VR Game Developer Extension"],
+            "answerIndex": 0
+        },
+        {
+            "question": "What is the Unity Input System, and how does it improve the handling of user input in games?",
+            "choices": ["Increasing graphics performance", "Simulating real-world physics", "Managing player preferences", "Enhancing input responsiveness"],
+            "answerIndex": 3
+        },
+        {
+            "question": "Explain the concept of Unity's 'Event System' and its role in handling user interface (UI) interactions.",
+            "choices": ["Controlling character movements", "Triggering particle effects", "Handling UI button clicks", "Simulating weather conditions"],
+            "answerIndex": 2
+        },
+        {
+            "question": "How does Unity support the creation of multiplayer games, and what networking solutions are commonly used?",
+            "choices": ["UnityNet", "Photon Unity Networking", "Multiplayer Module", "Unity Online Play"],
+            "answerIndex": 1
+        },
+        {
+            "question": "Describe the purpose of Unity's Navigation System, and how is it used for character or AI movement in a game?",
+            "choices": ["Creating realistic lighting", "Implementing pathfinding", "Generating procedural content", "Handling audio synchronization"],
+            "answerIndex": 1
+        },
+        {
+            "question": "What is Unity's AssetBundles feature, and how can it be utilized to optimize game loading times?",
+            "choices": ["Reducing polygon count", "Streaming audio data", "Dynamic asset loading", "Creating compressed textures"],
+            "answerIndex": 2
+        }
+    ]
+}
