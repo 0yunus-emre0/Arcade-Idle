@@ -16,6 +16,7 @@ public class MultipleChoices : MonoBehaviour
     #region PrivateVariables
     private QuestionsData[] _selectedQuestions = new QuestionsData[3];
     private int _activeQuestionIndex;
+    private int _quizScore;
     #endregion
 
     public Action<bool> OnAnsveredQuestion;
@@ -40,31 +41,35 @@ public class MultipleChoices : MonoBehaviour
         InitTexts();  
     }
     void InitTexts(){
+        if(_activeQuestionIndex >= _selectedQuestions.Length) return;
         questionText.text = _selectedQuestions[_activeQuestionIndex].question;
         for(int i = 0; i < _selectedQuestions[_activeQuestionIndex].choices.Length;i++){
             choicesTexts[i].text = _selectedQuestions[_activeQuestionIndex].choices[i];
         }
     }
     public void ChoiceButton (int choiceIndex){
-        if(choiceIndex == _selectedQuestions[_activeQuestionIndex].answerIndex){
-            Debug.Log("Answer is Correct");
-            OnAnsveredQuestion?.Invoke(true);
-        }
-        else{
-            Debug.Log("Answer is Wrong");
-            OnAnsveredQuestion?.Invoke(false);
-        }
         if(_activeQuestionIndex < _selectedQuestions.Length){
+            if(choiceIndex == _selectedQuestions[_activeQuestionIndex].answerIndex){
+                Debug.Log("Answer is Correct");
+                _quizScore ++;
+                OnAnsveredQuestion?.Invoke(true);
+            }
+            else{
+                Debug.Log("Answer is Wrong");
+                OnAnsveredQuestion?.Invoke(false);
+            }
+            
             _activeQuestionIndex++;
             InitTexts();
-        }
-        else{
-
+            if(_activeQuestionIndex >= _selectedQuestions.Length){
+                GameManager.Instance.FinishMiniGame(_quizScore);
+                ResetQuiz();
+            }
         }
     }
     void ResetQuiz(){
         _activeQuestionIndex = 0;
-        
+        _quizScore = 0;
     }
 
     private void OnDestroy() {

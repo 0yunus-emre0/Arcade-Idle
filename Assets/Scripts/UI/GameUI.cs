@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+
 //using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,11 +14,13 @@ public class GameUI : UIBase
     [SerializeField] Animator successTextAnimator;
     [SerializeField] Image successTextImage;
     [SerializeField] Sprite correctText,wrongText;
+    [SerializeField] TextMeshProUGUI gameCoinText;
 
     protected override void Awake()
     {
         base.Awake();
         multipleChoices.OnAnsveredQuestion += OnAnsveredQuestion;
+        GameManager.Instance.OnMiniGameFinished += OnMiniGameFinished;
     }
 
     protected override void OnGameStateChanged(GameStates states)
@@ -29,6 +33,13 @@ public class GameUI : UIBase
                 return;
         }
     }
+    protected override void OnGameCoinChanged(int gameCoin)
+    {
+        gameCoinText.text = gameCoin.ToString();
+    }
+    void OnMiniGameFinished(int score){
+        monitorAnimator.Play("MonitorFadeOut");
+    }
     void OnAnsveredQuestion(bool answerState){
         successTextImage.sprite = (answerState)? correctText:wrongText;
         successTextAnimator.Play("SuccessTextFadeIn");
@@ -38,5 +49,6 @@ public class GameUI : UIBase
     {
         base.OnDestroy();
         multipleChoices.OnAnsveredQuestion -= OnAnsveredQuestion;
+        GameManager.Instance.OnMiniGameFinished += OnMiniGameFinished;
     }
 }

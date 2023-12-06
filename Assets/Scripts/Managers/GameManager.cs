@@ -23,6 +23,13 @@ public class GameManager : MonoBehaviour
     #region Events
     public Action<GameStates> OnGameStateChanged;
     public Action<QuizType> OnMiniGameInvoked;
+    public Action<int> OnMiniGameFinished;
+    public Action<int> OnGameCoinChanged;
+    #endregion
+
+    #region GameVariables
+    public int GameCoin{get;private set;}
+    public int customerCount = 1;
     #endregion
 
     private void Awake() {
@@ -37,9 +44,20 @@ public class GameManager : MonoBehaviour
         }
                 
     }
+    public void SetGameCoin(int amount){
+        GameCoin += amount;
+        OnGameCoinChanged?.Invoke(GameCoin);
+    }
     public void InvokeMiniGame(QuizType type){
         OnMiniGameInvoked?.Invoke(type);
     }
+    public void FinishMiniGame(int score){
+        OnMiniGameFinished?.Invoke(score);
+        Invoke(nameof(TurnGamePlay),.5f);
+    }
+    private void TurnGamePlay()=> SetGameState(GameStates.GamePlay);
+        
+    
     public void SetGameState (GameStates state){
         if(state == gameState) return;
         gameState = state;

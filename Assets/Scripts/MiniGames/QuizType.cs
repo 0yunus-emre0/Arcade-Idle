@@ -4,5 +4,6 @@ using UnityEngine;
 public class QuizType : ScriptableObject
 {
     public string JsonDataName;
+    public int packIndex;
 
 }
