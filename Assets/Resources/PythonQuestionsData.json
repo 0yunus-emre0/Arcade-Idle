@@ -1,0 +1,124 @@
+{
+    "questions": [
+        {
+          "question": "What is the output of `print(2 + 3)`?",
+          "choices": [
+            "5",
+            "23",
+            "True",
+            "Error"
+          ],
+          "answerIndex": 0
+        },
+        {
+          "question": "What data type is `'hello'`?",
+          "choices": [
+            "int",
+            "str",
+            "list",
+            "bool"
+          ],
+          "answerIndex": 1
+        },
+        {
+          "question": "What does the `+` operator do in `a = 5 + 3`?",
+          "choices": [
+            "Concatenates two strings",
+            "Adds two numbers",
+            "Compares two values",
+            "Assigns a value to a variable"
+          ],
+          "answerIndex": 1
+        },
+        {
+          "question": "What is the purpose of the `if` statement?",
+          "choices": [
+            "Prints a message",
+            "Defines a function",
+            "Executes code based on a condition",
+            "Reads input from the user"
+          ],
+          "answerIndex": 2
+        },
+        {
+          "question": "How do you write a loop that iterates 5 times?",
+          "choices": [
+            "for i in range(5):",
+            "while i < 5:",
+            "for i in 1:5:",
+            "i = 0; while i < 5: i += 1"
+          ],
+          "answerIndex": 0
+        },
+        {
+          "question": "What is the difference between a list and a tuple?",
+          "choices": [
+            "Lists are mutable, tuples are immutable.",
+            "Tuples are ordered, lists are unordered.",
+            "Lists use square brackets, tuples use parentheses.",
+            "Lists are used for storing numbers, tuples are used for storing strings."
+          ],
+          "answerIndex": 0
+        },
+        {
+          "question": "What is the purpose of the `append()` method?",
+          "choices": [
+            "Adds an item to a list",
+            "Removes an item from a list",
+            "Sorts a list in ascending order",
+            "Reverses the order of a list"
+          ],
+          "answerIndex": 0
+        },
+        {
+          "question": "How do you define a function in Python?",
+          "choices": [
+            "def function_name():",
+            "function function_name() {}",
+            "function function_name = () => {}",
+            "function function_name(params):"
+          ],
+          "answerIndex": 0
+        },
+        {
+          "question": "What is the difference between `==` and `is`?",
+          "choices": [
+            "`==` checks for equality of value, `is` checks for identity.",
+            "`==` is used for comparisons, `is` is used for assignments.",
+            "`==` is used for strings, `is` is used for numbers.",
+            "`==` is always true, `is` is sometimes true."
+          ],
+          "answerIndex": 0
+        },
+        {
+          "question": "What is the purpose of the `try-except` block?",
+          "choices": [
+            "Handles errors and exceptions",
+            "Defines multiple functions",
+            "Executes code repeatedly",
+            "Prints information to the console"
+          ],
+          "answerIndex": 0
+        },
+        {
+          "question": "What does the `break` statement do?",
+          "choices": [
+            "Exits a loop",
+            "Continues to the next iteration",
+            "Skips the current iteration",
+            "Returns a value from a function"
+          ],
+          "answerIndex": 0
+        },
+        {
+          "question": "What is the difference between a dictionary and a list?",
+          "choices": [
+            "Dictionaries are ordered, lists are unordered.",
+            "Lists use square brackets, dictionaries use curly braces.",
+            "Dictionaries store key-value pairs, lists store values in order.",
+            "Lists are used for storing strings, dictionaries are used for storing numbers."
+          ],
+          "answerIndex": 2
+        }
+    ]
+}

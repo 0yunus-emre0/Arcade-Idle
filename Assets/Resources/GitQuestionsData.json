@@ -1,0 +1,105 @@
+{
+    "questions": [
+      {
+        "question": "What is the purpose of the `git init` command?",
+        "choices": [
+          "To initialize a new Git repository",
+          "To commit changes",
+          "To clone a repository",
+          "To create a new branch"
+        ],
+        "answerIndex": 0
+      },
+      {
+        "question": "How do you stage changes for commit in Git?",
+        "choices": [
+          "git add",
+          "git commit",
+          "git push",
+          "git pull"
+        ],
+        "answerIndex": 0
+      },
+      {
+        "question": "What does the command `git status` display?",
+        "choices": [
+          "Current date and time",
+          "List of all commits",
+          "Changes not yet staged for commit",
+          "Branch history"
+        ],
+        "answerIndex": 2
+      },
+      {
+        "question": "What is the purpose of the `git commit` command?",
+        "choices": [
+          "To create a new branch",
+          "To push changes to the remote repository",
+          "To commit staged changes",
+          "To revert changes"
+        ],
+        "answerIndex": 2
+      },
+      {
+        "question": "How do you create a new branch in Git?",
+        "choices": [
+          "git branch",
+          "git merge",
+          "git checkout",
+          "git clone"
+        ],
+        "answerIndex": 0
+      },
+      {
+        "question": "What is the Git command to view the commit history?",
+        "choices": [
+          "git log",
+          "git diff",
+          "git branch",
+          "git show"
+        ],
+        "answerIndex": 0
+      },
+      {
+        "question": "How do you discard changes in your working directory in Git?",
+        "choices": [
+          "git reset",
+          "git revert",
+          "git discard",
+          "git remove"
+        ],
+        "answerIndex": 0
+      },
+      {
+        "question": "What is the purpose of the `git remote` command?",
+        "choices": [
+          "To remove a remote repository",
+          "To list remote repositories",
+          "To rename a remote repository",
+          "To create a new remote repository"
+        ],
+        "answerIndex": 1
+      },
+      {
+        "question": "How do you push changes to a remote repository in Git?",
+        "choices": [
+          "git push",
+          "git pull",
+          "git commit",
+          "git merge"
+        ],
+        "answerIndex": 0
+      },
+      {
+        "question": "What does the command `git clone` do?",
+        "choices": [
+          "To create a new branch",
+          "To clone a remote repository",
+          "To delete a branch",
+          "To switch branches"
+        ],
+        "answerIndex": 1
+      }
+    ]
+  }
+  

@@ -12,6 +12,7 @@ public class MultipleChoices : MonoBehaviour
     [Header("Text References: ")]
     [SerializeField] TextMeshProUGUI questionText;
     [SerializeField] TextMeshProUGUI[] choicesTexts;
+    [SerializeField] GameObject[] logos;
 
     #region PrivateVariables
     private QuestionsData[] _selectedQuestions = new QuestionsData[3];
@@ -30,6 +31,10 @@ public class MultipleChoices : MonoBehaviour
     }
     void OnMiniGameInvoked(QuizType type){
         quizType = type;
+        for(int i = 0; i < logos.Length; i++){
+            if(logos[i].activeSelf)logos[i].SetActive(false);
+        }
+        logos[type.packIndex].SetActive(true);
         InitQuestion();
     }
 

@@ -54,9 +54,9 @@ public class OrderDesk : Desk
     public Transform GiveEmptySpaceForCustomer(ref CustomerInfo customerInfo){
         
         int randomTransform = Random.Range(0,_emptyCustomerDurationsIndexs.Count);
-        customerInfo.durationIndex = randomTransform;
-        _emptyCustomerDurationsIndexs.Remove(randomTransform);
-        return _customerDurations[randomTransform];
+        customerInfo.durationIndex = _emptyCustomerDurationsIndexs[randomTransform];
+        _emptyCustomerDurationsIndexs.Remove(customerInfo.durationIndex);
+        return _customerDurations[customerInfo.durationIndex];
         
     }
     public Vector3 LookAtPosition(CustomerInfo info){

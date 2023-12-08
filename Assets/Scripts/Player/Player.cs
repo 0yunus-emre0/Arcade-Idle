@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
         _loadingPanel.alpha = 0;
         _timerFill.fillAmount = 1;
         //pool pack
-        pack = _poolGenerator.GetFromPoolBase(0,CoursePackPoolIndex);
+        pack = _poolGenerator.GetFromPoolBase(PoolIndexs.CoursePackage,CoursePackPoolIndex);
         pack.transform.SetParent(_holdingPoint);
         pack.transform.localPosition = Vector3.zero;
         pack.transform.localEulerAngles = Vector3.zero;

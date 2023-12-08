@@ -9,9 +9,12 @@ public class CustomerGenerator : MonoBehaviour
     [Header ("Variables: ")]
     public Transform[] spawnPoints;
     public int customerCount;
+    List<int> avaliableOrdersList = new List<int>();
 
     private void Awake() {
         customerCount = GameManager.Instance.customerCount;
+        GameManager.Instance.OnCustomerCountChanged += UpdateCustomersAndOrders;
+        avaliableOrdersList.Add(0);
     }
     private void Start() {
         for(int i = 0; i < customerCount;i++){
@@ -28,7 +31,20 @@ public class CustomerGenerator : MonoBehaviour
         customer.transform.position = GetDestroyDestination().position;
         if(customer.TryGetComponent<Customer>(out Customer customerComponent)){
             customerComponent.InitCustomerLook();
-            customerComponent.GoToOrderDesk();
+            int orderIndex = Random.Range(0,avaliableOrdersList.Count);
+            int order = avaliableOrdersList[orderIndex];
+            customerComponent.GoToOrderDesk(order);
         }
+    }
+    public void UpdateCustomersAndOrders(int customer,int order){
+        avaliableOrdersList.Add(order);
+        for(int i = 0; i < customer;i++){
+            AddCustomer();
+        }
+        customerCount += customer;
+    }
+
+    private void OnDestroy() {
+        GameManager.Instance.OnCustomerCountChanged -= UpdateCustomersAndOrders;
     }
 }

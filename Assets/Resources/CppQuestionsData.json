@@ -1,0 +1,104 @@
+{
+  "questions": [
+    {
+      "question": "What does the `cout` statement do in C++?",
+      "choices": [
+        "Input from the user",
+        "Output to the console",
+        "Declare a variable",
+        "Define a function"
+      ],
+      "answerIndex": 1
+    },
+    {
+      "question": "Which keyword is used for defining a function in C++?",
+      "choices": [
+        "method",
+        "define",
+        "function",
+        "void"
+      ],
+      "answerIndex": 3
+    },
+    {
+      "question": "What is the purpose of the `cin` statement in C++?",
+      "choices": [
+        "Output to the console",
+        "Input from the user",
+        "Include a library",
+        "Declare a constant"
+      ],
+      "answerIndex": 1
+    },
+    {
+      "question": "Which data type is used for whole numbers in C++?",
+      "choices": [
+        "float",
+        "double",
+        "int",
+        "char"
+      ],
+      "answerIndex": 2
+    },
+    {
+      "question": "What is the purpose of the `#include` directive in C++?",
+      "choices": [
+        "Declare a variable",
+        "Define a function",
+        "Include pre-written code",
+        "Output to the console"
+      ],
+      "answerIndex": 2
+    },
+    {
+      "question": "Which operator is used for assigning a value in C++?",
+      "choices": [
+        "=",
+        "==",
+        "+=",
+        "++"
+      ],
+      "answerIndex": 0
+    },
+    {
+      "question": "What does the `if` statement do in C++?",
+      "choices": [
+        "Looping",
+        "Conditional execution",
+        "Function declaration",
+        "Variable definition"
+      ],
+      "answerIndex": 1
+    },
+    {
+      "question": "Which loop is used for definite iteration in C++?",
+      "choices": [
+        "for",
+        "while",
+        "do-while",
+        "if-else"
+      ],
+      "answerIndex": 0
+    },
+    {
+      "question": "What is the purpose of the `return` statement in a function?",
+      "choices": [
+        "Terminate the program",
+        "Declare a variable",
+        "Return a value from the function",
+        "Define a function"
+      ],
+      "answerIndex": 2
+    },
+    {
+      "question": "Which header file is used for input and output operations in C++?",
+      "choices": [
+        "iostream",
+        "math",
+        "string",
+        "iomanip"
+      ],
+      "answerIndex": 0
+    }
+  ]
+}

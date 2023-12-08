@@ -5,6 +5,7 @@ using System;
 
 public class PoolGenerator : MonoBehaviour
 {
+    [SerializeField] GameObject environment;
     [SerializeField] CustomerGenerator customerGenerator;
     [SerializeField] OrderDesk orderDesk;
     [SerializeField] PoolBase[] poolBase;
@@ -31,6 +32,7 @@ public class PoolGenerator : MonoBehaviour
     
     void GeneratePoolBase(){
         GameObject gameObjectPool = new GameObject("Pool Base");
+        gameObjectPool.transform.SetParent(environment.transform);
         for(int a = 0; a < poolBase.Length; a++){
             GameObject poolTypes = new GameObject(poolBase[a].poolType);
             poolTypes.transform.SetParent(gameObjectPool.transform);

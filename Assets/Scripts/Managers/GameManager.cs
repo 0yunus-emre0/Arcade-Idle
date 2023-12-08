@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public Action<QuizType> OnMiniGameInvoked;
     public Action<int> OnMiniGameFinished;
     public Action<int> OnGameCoinChanged;
+    public Action<int,int> OnCustomerCountChanged;
     #endregion
 
     #region GameVariables
@@ -47,6 +48,10 @@ public class GameManager : MonoBehaviour
     public void SetGameCoin(int amount){
         GameCoin += amount;
         OnGameCoinChanged?.Invoke(GameCoin);
+    }
+    public void SetCustomerCount(int customer,int orderIndex){
+        customerCount += customer;
+        OnCustomerCountChanged?.Invoke(customer,orderIndex);
     }
     public void InvokeMiniGame(QuizType type){
         OnMiniGameInvoked?.Invoke(type);

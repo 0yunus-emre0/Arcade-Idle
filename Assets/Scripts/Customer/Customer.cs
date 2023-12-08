@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
 using DG.Tweening;
+using TMPro;
 
 public class Customer : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Customer : MonoBehaviour
     [SerializeField] PoolGenerator _poolGenerator;
     [SerializeField] OrderDesk _orderDesk;
     [SerializeField] NavMeshAgent _navMeshAgent;
+    [SerializeField] RectTransform _panels;
     [SerializeField] CanvasGroup _loadingPanel;
     [SerializeField] CanvasGroup _starPanel;
     [SerializeField] Image _starFill;
@@ -21,6 +23,8 @@ public class Customer : MonoBehaviour
     [SerializeField] Material[] _hairMaterials;
     [SerializeField] GameObject _torso;
     [SerializeField] Animator _customerAnimator;
+    [SerializeField] Animator _goldPanelAnimator;
+    [SerializeField] TextMeshProUGUI _gainGoldText;
  
     [Header("Variables: ")]
     CustomerInfo _customerInfo = new CustomerInfo();
@@ -53,7 +57,6 @@ public class Customer : MonoBehaviour
     }
     private void Start() {
         _navMeshAgent = GetComponent<NavMeshAgent>();
-        _customerInfo.orderIndex = 0;
         _customerInfo.customer = this;
         _orderImage.sprite = _orderLogos[_customerInfo.orderIndex];
         //GoToOrderDesk();
@@ -66,11 +69,15 @@ public class Customer : MonoBehaviour
         }
     }
     private void LateUpdate() {
-        //_orderPanel.transform.LookAt(_orderPanel.transform.position + Camera.main.transform.forward);
+        _orderPanel.transform.LookAt(_orderPanel.transform.position + Camera.main.transform.forward);
+        //_starPanel.transform.LookAt(_orderPanel.transform.position + Camera.main.transform.right);
+        //_loadingPanel.transform.LookAt(_orderPanel.transform.position + Camera.main.transform.right);
     }
-    public void GoToOrderDesk(){
+    public void GoToOrderDesk(int order){
         if(_navMeshAgent == null) Debug.Log("agent null");
+        _customerInfo.orderIndex = order;
         _navMeshAgent.SetDestination(_orderDesk.GiveEmptySpaceForCustomer(ref _customerInfo).position);
+        Debug.Log(gameObject.name + " " + _customerInfo.durationIndex);
         _customerAnimator.Play("CustomerWalk");
         _isGoingDesk = true;
     }
@@ -96,7 +103,9 @@ public class Customer : MonoBehaviour
                 _orderDesk.PlugCustomer(_customerInfo,false);
                 order.DestroyObject();
                 _loadingPanel.DOFade(0,1f).OnComplete(()=>_timerFill.fillAmount = 1);
-                GoToOut();
+                _gainGoldText.text = "+" + payment.ToString();
+                _goldPanelAnimator.Play("CustomerGoldFade");
+                Invoke(nameof(GoToOut),1.5f);
             });
         }
         );
