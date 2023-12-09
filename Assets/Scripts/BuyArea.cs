@@ -30,6 +30,7 @@ public class BuyArea : MonoBehaviour
         _loadingFillImage.DOFillAmount(1,_loadTimeAmount).OnComplete(()=>{
             GameManager.Instance.SetGameCoin(-_cost);
             GameObject spawnvfx = _poolGenerator.GetFromPoolBase(PoolIndexs.VFXBase,PoolIndexs.DeskSpawnVfx);
+            AudioManager.Instance.PlaySFX("Spawn");
             spawnvfx.transform.position = _desk.transform.position;
             if(_desk.TryGetComponent<PrepareDesk>(out PrepareDesk desk)){
                 int orderIndex = desk._quizType.packIndex;

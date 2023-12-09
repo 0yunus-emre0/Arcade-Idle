@@ -6,6 +6,7 @@ using TMPro;
 //using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameUI : UIBase
 {
@@ -19,12 +20,17 @@ public class GameUI : UIBase
     [SerializeField] Image successTextImage;
     [SerializeField] Sprite correctText,wrongText;
     [SerializeField] TextMeshProUGUI gameCoinText;
+    [SerializeField] Slider musicSlider;
+    [SerializeField] Slider sfxSlider;
 
     protected override void Awake()
     {
         base.Awake();
         multipleChoices.OnAnsveredQuestion += OnAnsveredQuestion;
         GameManager.Instance.OnMiniGameFinished += OnMiniGameFinished;
+    }
+    private void Start() {
+        AudioManager.Instance.PlayMusic("GameMusic");
     }
 
     protected override void OnGameStateChanged(GameStates states)
@@ -76,6 +82,16 @@ public class GameUI : UIBase
         pauseSettingsPanel.blocksRaycasts = false;
         pauseMainPanel.DOFade(1,.5f);
         pauseSettingsPanel.DOFade(0,.5f);
+    }
+    public void OnRestartButtonPressed(){
+        GameManager.Instance.SetGameState(GameStates.GamePlay);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void OnMusicSliderValueChanged(){
+        AudioManager.Instance.musicSource.volume = musicSlider.value;
+    }
+    public void OnSfxSliderValueChanged(){
+        AudioManager.Instance.sfxSource.volume = sfxSlider.value;
     }
     protected override void OnDestroy()
     {

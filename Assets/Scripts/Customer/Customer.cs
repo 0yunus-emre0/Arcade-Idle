@@ -74,6 +74,8 @@ public class Customer : MonoBehaviour
         //_loadingPanel.transform.LookAt(_orderPanel.transform.position + Camera.main.transform.right);
     }
     public void GoToOrderDesk(int order){
+        _isGoingDesk = false;
+        _isGoingOut = false;
         if(_navMeshAgent == null) Debug.Log("agent null");
         _customerInfo.orderIndex = order;
         _navMeshAgent.SetDestination(_orderDesk.GiveEmptySpaceForCustomer(ref _customerInfo).position);
@@ -104,6 +106,7 @@ public class Customer : MonoBehaviour
                 order.DestroyObject();
                 _loadingPanel.DOFade(0,1f).OnComplete(()=>_timerFill.fillAmount = 1);
                 _gainGoldText.text = "+" + payment.ToString();
+                AudioManager.Instance.PlaySFX("Coin");
                 _goldPanelAnimator.Play("CustomerGoldFade");
                 Invoke(nameof(GoToOut),1.5f);
             });
@@ -112,7 +115,6 @@ public class Customer : MonoBehaviour
 
     }
     void AskOrder(){
-        
         Vector3 position = _orderDesk.LookAtPosition(_customerInfo);
         Vector3 direction = position - transform.position;
         transform.DOLookAt(direction,.8f);

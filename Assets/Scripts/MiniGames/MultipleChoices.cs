@@ -57,10 +57,12 @@ public class MultipleChoices : MonoBehaviour
             if(choiceIndex == _selectedQuestions[_activeQuestionIndex].answerIndex){
                 Debug.Log("Answer is Correct");
                 _quizScore ++;
+                AudioManager.Instance.PlaySFX("Correct");
                 OnAnsveredQuestion?.Invoke(true);
             }
             else{
                 Debug.Log("Answer is Wrong");
+                AudioManager.Instance.PlaySFX("Wrong");
                 OnAnsveredQuestion?.Invoke(false);
             }
             
