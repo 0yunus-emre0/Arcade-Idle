@@ -1,5 +1,5 @@
-This Game Project made for Techcareer.net as a final project.
-Your goal is prepare courses and deliver to customers. You have to answer 3 questions for success to prepare courses. Your answers to the questions will affect the quality of the courses.
+This Game Project was made as a final project for Techcareer.net.
+Your goal is to prepare courses and deliver them to customers. In order to prepare the courses successfully, you must answer 3 questions.. Your answers to the questions will affect the quality of the courses.
 
 You can play with the browser in itch.io : https://00emre00.itch.io/arcade-idle 
 
